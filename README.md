@@ -124,38 +124,8 @@ Este aplicativo mobile faz parte de um ecossistema completo que inclui:
 ## 📁 Estrutura do Projeto
 
 \`\`\`
-safework-mobile/
-├── app/                          # Rotas e telas (Expo Router)
-│   ├── (tabs)/                   # Abas principais do app
-│   │   ├── home.tsx             # Dashboard principal
-│   │   ├── equipment.tsx        # Lista de equipamentos
-│   │   ├── procedures.tsx       # Procedimentos e EPIs
-│   │   └── settings.tsx         # Configurações
-│   ├── login.tsx                # Tela de login
-│   ├── signup.tsx               # Tela de cadastro
-│   ├── profile.tsx              # Perfil do usuário
-│   └── _layout.tsx              # Layout raiz com providers
-├── src/
-│   ├── components/              # Componentes reutilizáveis
-│   │   ├── button.tsx          # Botão customizado
-│   │   ├── card.tsx            # Card com variantes
-│   │   ├── text-input.tsx      # Input de texto
-│   │   └── permission-dialog.tsx # Diálogo de permissões
-│   ├── contexts/               # Contextos React
-│   │   ├── auth-context.tsx   # Autenticação
-│   │   ├── theme-context.tsx  # Tema claro/escuro
-│   │   ├── language-context.tsx # Internacionalização
-│   │   └── notification-context.tsx # Notificações
-│   └── constants/              # Constantes e configurações
-│       ├── colors.ts           # Paleta de cores
-│       ├── theme.ts            # Tema da aplicação
-│       └── index.ts            # Exports centralizados
-├── assets/                      # Imagens e recursos
-│   ├── safework-logo.png       # Logo do app
-│   └── news-image.jpg          # Imagens de conteúdo
-├── CHECKLIST_PROJETO.md        # Checklist de requisitos
-├── package.json                # Dependências do projeto
-└── tsconfig.json               # Configuração TypeScript
+<img width="296" height="650" alt="image" src="https://github.com/user-attachments/assets/1e908d11-c244-438d-a2d2-a9f7fb96c19f" />
+
 \`\`\`
 
 ---
