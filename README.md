@@ -35,11 +35,9 @@ A solução utiliza **IA de visão computacional** para monitorar o uso de EPIs 
 
 Este aplicativo mobile faz parte de um ecossistema completo que inclui:
 - 📱 **App Mobile React Native** (este repositório)
-- 🔧 **Backend .NET API** - Autenticação, usuários e eventos
-- ☕ **Backend Java Service** - Análise e comunicação com IA
+- ☕ **Backend Java Service** - API utilizada 
 - 🤖 **Visão Computacional** - Python + OpenCV + YOLOv5
-- 💾 **Banco SQL** - PostgreSQL/SQL Server
-- ☁️ **Cloud Deploy** - Azure/AWS com Docker
+- 💾 **Banco SQL** - H2
 
 ---
 
@@ -48,7 +46,7 @@ Este aplicativo mobile faz parte de um ecossistema completo que inclui:
 ### 🔐 Autenticação e Cadastro
 - Tela de login com validação de email e senha
 - Tela de cadastro de novos usuários
-- Sistema de contexto de autenticação (AuthContext)
+- Sistema de autenticação (Firebase Authentication)
 - Persistência de sessão do usuário
 - Logout funcional com limpeza de sessão
 
@@ -111,13 +109,10 @@ Este aplicativo mobile faz parte de um ecossistema completo que inclui:
 - **TypeScript** - Tipagem estática para JavaScript
 - **Expo Router** - Navegação baseada em arquivos
 - **Expo Notifications** - Sistema de notificações push
-- **React Context API** - Gerenciamento de estado global
 
 ### Bibliotecas e Ferramentas
 - **@expo/vector-icons** - Ícones vetoriais (Ionicons, MaterialIcons, etc.)
 - **expo-image-picker** - Seleção de imagens
-- **expo-secure-store** - Armazenamento seguro de dados
-- **React Native Safe Area Context** - Suporte a áreas seguras
 
 ### Desenvolvimento
 - **ESLint** - Linter para JavaScript/TypeScript
@@ -176,20 +171,19 @@ safework-mobile/
 ### Instalação
 
 1. Clone o repositório:
-\`\`\`bash
-git clone https://github.com/seu-usuario/safework-mobile.git
-cd safework-mobile
+\`\`\`
+git clone https://github.com/felipecvo-fiap-mad/2tdspw-gs-2-safework
 \`\`\`
 
 2. Instale as dependências:
-\`\`\`bash
+\`\`\`
 npm install
 # ou
 yarn install
 \`\`\`
 
 3. Inicie o projeto:
-\`\`\`bash
+\`\`\`
 npx expo start
 \`\`\`
 
@@ -200,11 +194,10 @@ npx expo start
 
 ### Scripts Disponíveis
 
-\`\`\`bash
+\`\`\`
 npm start          # Inicia o Expo Dev Server
 npm run android    # Executa no Android
 npm run ios        # Executa no iOS
-npm run web        # Executa no navegador
 npm run lint       # Executa o linter
 \`\`\`
 
@@ -229,45 +222,6 @@ npm run lint       # Executa o linter
 
 ---
 
-## 🏗️ Arquitetura da Solução Completa
-
-\`\`\`
-┌─────────────────┐
-│  React Native   │ ← Você está aqui
-│   Mobile App    │
-└────────┬────────┘
-         │
-         ├──────────────┐
-         │              │
-    ┌────▼─────┐   ┌───▼──────┐
-    │ .NET API │   │ Java API │
-    │  (Auth)  │   │   (IA)   │
-    └────┬─────┘   └────┬─────┘
-         │              │
-         └──────┬───────┘
-                │
-         ┌──────▼───────┐
-         │  PostgreSQL  │
-         │   Database   │
-         └──────────────┘
-                │
-         ┌──────▼───────────┐
-         │ Python + YOLO    │
-         │ Visão Computacional│
-         └──────────────────┘
-\`\`\`
-
-### Fluxo de Funcionamento
-
-1. **Captura** - Câmeras capturam imagens no ambiente de trabalho
-2. **Análise IA** - Python + YOLO detecta uso de EPIs
-3. **Processamento** - Java Service processa resultados
-4. **Registro** - .NET API grava eventos no banco
-5. **Notificação** - App mobile recebe push notifications
-6. **Visualização** - Usuários veem alertas e estatísticas
-
----
-
 ## ✅ Requisitos Atendidos (Projeto Acadêmico)
 
 ### 1. Telas e Navegação (10 pontos) ✅
@@ -283,22 +237,24 @@ npm run lint       # Executa o linter
 5. Procedures (Procedimentos)
 6. Settings (Configurações)
 7. Profile (Perfil) - *BÔNUS*
+8. About (Sobre o App)
+9. Privacy (Privacidade)
+10. support (Ajuda e suporte)
+11. equipment-eddit (Editar Equipamentos)
+12. equipment-register (registrar equipamento)
 
-### 2. CRUD com API (30 pontos) ⚠️
-- [ ] Operações Create, Read, Update, Delete
-- [ ] Integração com API REST (.NET/Java)
-- [ ] Tratamento de erros e feedback visual
+### 2. CRUD com API (30 pontos) ✅
+- [x] Operações Create, Read, Update, Delete
+- [x] Integração com API REST (Java)
+- [x] Tratamento de erros e feedback visual
 
-**Status:** *Em desenvolvimento - Requer backend*
 
-### 3. Sistema de Autenticação (20 pontos) ⚠️
+### 3. Sistema de Autenticação (20 pontos) ✅
 - [x] Tela de cadastro (signup)
 - [x] Tela de login
 - [x] Logout funcional
-- [ ] Autenticação real com API
-- [ ] Proteção de rotas
-
-**Status:** *Interface completa, aguardando integração com backend*
+- [x] Autenticação real com API (Firebase)
+- [x] Proteção de rotas (Obrigação Logar)
 
 ### 4. Estilização (5 pontos) ✅
 - [x] Personalização de cores
@@ -313,59 +269,9 @@ npm run lint       # Executa o linter
 - [x] Código limpo e bem estruturado
 
 ### 6. Vídeo Demonstrativo (10 pontos) ⏳
-- [ ] Gravação de 5 minutos
-- [ ] Demonstração das funcionalidades
-- [ ] Upload no YouTube
-
-**Status:** *Pendente*
-
-### Pontuação Estimada: 55/100
-*Necessária integração com backend para CRUD e autenticação completa*
-
----
-
-## 🔄 Próximos Passos
-
-### Prioridade Alta
-- [ ] Implementar integração com API .NET para autenticação
-- [ ] Desenvolver operações CRUD completas
-- [ ] Adicionar proteção de rotas (middleware)
-- [ ] Implementar validação de formulários avançada
-- [ ] Conectar com backend Java para dados de IA
-
-### Prioridade Média
-- [ ] Adicionar testes automatizados (Jest)
-- [ ] Implementar cache de dados offline
-- [ ] Melhorar performance com React.memo
-- [ ] Adicionar modo offline first
-- [ ] Implementar analytics de uso
-
-### Prioridade Baixa
-- [ ] Adicionar mais idiomas
-- [ ] Implementar tour guiado para novos usuários
-- [ ] Adicionar gráficos e estatísticas avançadas
-- [ ] Modo de alto contraste para acessibilidade
-- [ ] Suporte a biometria (FaceID/TouchID)
-
----
-
-## 📚 Documentação Adicional
-
-- [Checklist do Projeto](./CHECKLIST_PROJETO.md) - Requisitos detalhados
-- [Expo Documentation](https://docs.expo.dev/)
-- [React Native Documentation](https://reactnative.dev/docs/getting-started)
-
----
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Para contribuir:
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/NovaFuncionalidade`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
-5. Abra um Pull Request
+- [x] Gravação de 5 minutos
+- [x] Demonstração das funcionalidades
+- [x] Upload no YouTube
 
 ---
 
@@ -387,5 +293,4 @@ Para dúvidas ou sugestões, entre em contato com a equipe:
 
 <p align="center">
   Desenvolvido com ❤️ pela equipe SafeWork<br/>
-  © 2025 - Todos os direitos reservados
 </p>
