@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/React%20Native-0.81.5-blue?style=for-the-badge&logo=react" alt="React Native"/>
   <img src="https://img.shields.io/badge/Expo-54.0.23-000020?style=for-the-badge&logo=expo" alt="Expo"/>
   <img src="https://img.shields.io/badge/TypeScript-5.3-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge" alt="Status"/>
+  <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge" alt="Protótipo"/>
 </p>
 
 ---
